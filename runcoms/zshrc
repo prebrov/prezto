@@ -48,7 +48,7 @@ fi
 
 # Set terminal title
 case $TERM in
-    *xterm*|ansi)
+    *xterm*|ansi|screen)
         DISABLE_AUTO_TITLE="true" 
         function precmd { print -Pn "\e]0;%m:%~\a" }
         ;;
