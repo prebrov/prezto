@@ -50,7 +50,7 @@ fi
 case $TERM in
     *xterm*|ansi|screen)
         DISABLE_AUTO_TITLE="true" 
-        function precmd { print -Pn "\e]0;%m:%~\a" }
+        function precmd { print -Pn "\e]0;%m:%1~\a" }
         ;;
 esac
 
