@@ -46,6 +46,14 @@ if [[ "$OSTYPE" == darwin* ]]; then
     PROMPT='%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1:%~${(e)git_info[prompt]}$ '
 fi
 
+# Set terminal title
+case $TERM in
+    *xterm*|ansi)
+        DISABLE_AUTO_TITLE="true" 
+        function precmd { print -Pn "\e]0;%m:%~\a" }
+        ;;
+esac
+
 # Search history substrings with keys
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
