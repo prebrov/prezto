@@ -25,13 +25,20 @@ if [ -f ~/.aliases ]; then
 fi
 
 # enable file coloration
-if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
+if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ] || [ -x /usr/local/opt/coreutils/libexec/gnubin/dircolors ]; then
     [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
     [ -e "$DIR_COLORS" ] || DIR_COLORS=""
     eval "`dircolors -b $DIR_COLORS`"
 
     #eval "`dircolors -b`"
-    export LS_OPTIONS='--color=auto'
+
+    if [[ "$OSTYPE" == darwin* ]]; then
+      alias ls="ls --color=always"
+      alias grep="grep --color=always"
+      alias egrep="egrep --color=always"
+    else
+      export LS_OPTIONS='--color=auto'
+    fi
 fi
 
 # Search history substrings with keys
