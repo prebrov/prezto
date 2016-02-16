@@ -24,9 +24,11 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
+  'terminal' \
+  'screen' \
+  'ssh' \
   'git' \
   'environment' \
-  'terminal' \
   'editor' \
   'history' \
   'directory' \
@@ -35,8 +37,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'history-substring-search' \
   'syntax-highlighting' \
-  'prompt' \
-  'screen'
+  'prompt' 
 
 #
 # Editor
@@ -90,6 +91,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'jerome'
+#zstyle ':prezto:module:prompt' theme 'skwp'
 
 #
 # Ruby
@@ -142,10 +144,10 @@ zstyle ':prezto:module:screen:auto-start' remote 'yes'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+#zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Set the tab title format.
-zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+#zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 #
 # Tmux
